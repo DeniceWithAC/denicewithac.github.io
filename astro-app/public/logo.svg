@@ -52,8 +52,8 @@
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-34.611431,-20.818906)"
            id="text1"
-           style="font-size:74.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#205169"
-           color="#205169"
+           style="font-size:74.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:currentColor"
+           color="currentColor"
            inkscape:label="Denice"><tspan
              x="236.4668"
              y="245.9823"
@@ -62,11 +62,11 @@
                id="tspan1">Denice</tspan></tspan></text>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#205169;stroke-width:0.264583"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:currentColor;stroke-width:0.264583"
            x="29.146465"
            y="57.251995"
            id="text2"
-           color="#205169"
+           color="currentColor"
            inkscape:label="with a"><tspan
              sodipodi:role="line"
              id="tspan2"
@@ -77,8 +77,8 @@
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-39.555923,-43.19923)"
            id="text3"
-           color="#205169"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:400px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:#205169"
+           color="currentColor"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:400px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:currentColor"
            inkscape:label="C"><tspan
              x="155.4043"
              y="461.59245"
@@ -95,8 +95,8 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-34.611431,-20.818906)"
        id="text1"
-       style="font-size:74.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#205169"
-       color="#205169"
+       style="font-size:74.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:currentColor"
+       color="#currentColor"
        inkscape:label="Denice"><tspan
          x="236.4668"
          y="245.9823"
@@ -105,11 +105,11 @@
            id="tspan1">Denice</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#205169;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:currentColor;stroke-width:0.264583"
        x="29.146465"
        y="57.251995"
        id="text2"
-       color="#205169"
+       color="#currentColor"
        inkscape:label="with a"><tspan
          sodipodi:role="line"
          id="tspan2"
@@ -120,8 +120,8 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-39.555923,-43.19923)"
        id="text3"
-       color="#205169"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:400px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:#205169"
+       color="#currentColor"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:400px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:currentColor"
        inkscape:label="C"><tspan
          x="155.4043"
          y="461.59245"

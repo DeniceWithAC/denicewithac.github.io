@@ -1,130 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="97.534683mm"
-   height="72.389801mm"
-   viewBox="0 0 97.534683 72.389801"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="DeniceWithaC_transparent.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:deskcolor="#505050"
-     inkscape:document-units="mm"
-     inkscape:zoom="1.0167041"
-     inkscape:cx="314.25072"
-     inkscape:cy="181.46873"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="792"
-     inkscape:window-y="137"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1">
-    <rect
-       x="155.40411"
-       y="115.07773"
-       width="448.50809"
-       height="501.62088"
-       id="rect3" />
-    <rect
-       x="236.46635"
-       y="178.04526"
-       width="316.32828"
-       height="99.714088"
-       id="rect1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.534683 72.389801">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Merriweather:ital,wght@1,400;0,700&display=swap');
+      .denice { font-family: 'Merriweather', serif; font-weight: 700; font-size: 19.75px; fill: currentColor; }
+      .witha { font-family: 'Merriweather', serif; font-style: italic; font-size: 14.11px; fill: currentColor; }
+      .cletter { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; font-size: 105.83px; fill: currentColor; }
+    </style>
     <symbol id="logo" viewBox="0 0 97.534683 72.389801">
-      <g transform="translate(-5.6889175,-7.8105479)">
-        <text
-           xml:space="preserve"
-           transform="matrix(0.26458333,0,0,0.26458333,-34.611431,-20.818906)"
-           id="text1"
-           style="font-size:74.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:currentColor"
-           color="currentColor"
-           inkscape:label="Denice"><tspan
-             x="236.4668"
-             y="245.9823"
-             id="tspan6"><tspan
-               style="font-weight:bold;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Bold'"
-               id="tspan1">Denice</tspan></tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:currentColor;stroke-width:0.264583"
-           x="29.146465"
-           y="57.251995"
-           id="text2"
-           color="currentColor"
-           inkscape:label="with a"><tspan
-             sodipodi:role="line"
-             id="tspan2"
-             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Serif;-inkscape-font-specification:'Serif Italic';stroke-width:0.264583"
-             x="29.146465"
-             y="57.251995">with a</tspan></text>
-        <text
-           xml:space="preserve"
-           transform="matrix(0.26458333,0,0,0.26458333,-39.555923,-43.19923)"
-           id="text3"
-           color="currentColor"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:400px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:currentColor"
-           inkscape:label="C"><tspan
-             x="155.4043"
-             y="461.59245"
-             id="tspan7">C</tspan></text>
-      </g>
+      <text x="62.5" y="65" class="denice">Denice</text>
+      <text x="29.15" y="57.25" class="witha">with a</text>
+      <text x="40" y="50" class="cletter">C</text>
     </symbol>
   </defs>
-  <g
-     inkscape:label="logo"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-5.6889175,-7.8105479)">
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-34.611431,-20.818906)"
-       id="text1"
-       style="font-size:74.6667px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:currentColor"
-       color="#currentColor"
-       inkscape:label="Denice"><tspan
-         x="236.4668"
-         y="245.9823"
-         id="tspan6"><tspan
-           style="font-weight:bold;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif Bold'"
-           id="tspan1">Denice</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:currentColor;stroke-width:0.264583"
-       x="29.146465"
-       y="57.251995"
-       id="text2"
-       color="#currentColor"
-       inkscape:label="with a"><tspan
-         sodipodi:role="line"
-         id="tspan2"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Serif;-inkscape-font-specification:'Serif Italic';stroke-width:0.264583"
-         x="29.146465"
-         y="57.251995">with a</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-39.555923,-43.19923)"
-       id="text3"
-       color="#currentColor"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:400px;font-family:'Frank Ruhl Hofshi';-inkscape-font-specification:'Frank Ruhl Hofshi Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:currentColor"
-       inkscape:label="C"><tspan
-         x="155.4043"
-         y="461.59245"
-         id="tspan7">C</tspan></text>
-  </g>
 </svg>

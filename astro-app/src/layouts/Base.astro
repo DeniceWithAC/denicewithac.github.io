@@ -42,14 +42,14 @@ const {
 			<div class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
 		</div>
 	
-		<div class="relative flex min-h-screen w-full">
+		<div class="flex min-h-screen w-full">
 			<!-- Sidebar for Docs Series -->
 			<slot name="sidebar" />
 			<!-- Main container for the page content -->
-			<div id="container" class="min-w-3xl relative m-auto max-w-4xl grow">
+			<div id="container" class="min-w-3xl m-auto max-w-4xl grow">
 				<div class="m-auto grid min-h-screen md:grid-rows-[auto_auto_1fr] px-4 md:px-8 md:pt-4">
 					<Header />
-					<main id="main" class="relative flex-grow mt-32 md:mt-[3.5rem]">
+					<main id="main" class="flex-grow mt-32 md:mt-[3.5rem]">
 						<slot />
 					</main>
 					<Footer />

@@ -48,13 +48,17 @@ const latestNotes = allNotes
 			<div class="flex justify-center mb-4">
 				<SocialList />
 			</div>
-			<div class="flex justify-center space-x-4 mt-4">
-				<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
-					<span class="text-bgColor font-semibold">
-						Read Blog
-					</span>
-				</a>
-			</div>
+			{
+				allPostsByDate.length > 0 && (
+					<div class="flex justify-center space-x-4 mt-4">
+						<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
+							<span class="text-bgColor font-semibold">
+								Read Blog
+							</span>
+						</a>
+					</div>
+				)
+			}
 		</div>
 	</section>
 

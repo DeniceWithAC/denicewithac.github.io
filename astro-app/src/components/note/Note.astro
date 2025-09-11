@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
 
@@ -20,10 +20,14 @@ const { Content } = await render(note);
 		{
 			isPreview ? (
 				<a class="citrus-link" href={`/notes/${note.id}/`}>
+					{note.data.draft && <span class="text-red-500">(Draft) </span>}
 					{note.data.title}
 				</a>
 			) : (
-				<>{note.data.title}</>
+				<>
+					{note.data.draft && <span class="text-red-500">(Draft) </span>}
+					{note.data.title}
+				</>
 			)
 		}
 	</Tag>

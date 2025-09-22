@@ -38,3 +38,6 @@ content:
         label: Draft
         type: boolean
         default: false
+      - name: body
+        label: Body
+        type: rich-text

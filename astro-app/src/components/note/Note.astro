@@ -14,7 +14,7 @@ const { Content } = await render(note);
 
 <article
 	class:list={[isPreview && "inline-grid w-full rounded-lg bg-color-75 px-4 md:px-8 py-2 md:py-4"]}
-	data-pagefind-body={isPreview ? false : true}
+	data-pagefind-body={isPreview || note.data.draft ? false : true}
 >
 	<Tag class="flex items-end title md:sticky md:top-8 md:z-10" class:list={{ "text-base": isPreview }}>
 		{

@@ -15,7 +15,7 @@ import ContactForm from "./ContactForm.astro";
 
 	<dialog
 		aria-label="Contact Form"
-		class="h-full max-h-full w-full max-w-full md:h-fit bg-bgColor backdrop:backdrop-blur-xl md:my-8 md:min-h-[6.5rem] 'md:w-5/6' md:max-w-[44rem] md:rounded-lg overflow-y-hidden">	
+		class="h-full max-h-full w-full max-w-full md:h-fit bg-bgColor backdrop:backdrop-blur-xl md:my-8 md:min-h-[6.5rem] 'md:w-5/6' md:max-w-[44rem] md:rounded-lg overflow-y-auto">	
 		<div class="dialog-frame flex flex-col h-[100%] px-4 pt-4 pb-4 md:px-8 md:py-8 gap-4">
 			<div class="md:hidden sticky top-0 z-20 flex items-center justify-between bg-bgColor">
 				<h4 class="title flex items-end font-semibold">Contact Me</h4>
@@ -43,7 +43,7 @@ import ContactForm from "./ContactForm.astro";
 		closeModal = () => {
 			if (this.dialog.open) {
 				this.dialog.close();
-				document.body.classList.remove("overflow-hidden");
+				document.documentElement.classList.remove("overflow-hidden");
 				window.removeEventListener("click", this.onWindowClick);
 			}
 		};
@@ -52,7 +52,7 @@ import ContactForm from "./ContactForm.astro";
 			const isLink = "href" in (event.target || {});
 			if (
 				isLink ||
-				(document.body.contains(event.target as Node) &&
+				(document.documentElement.contains(event.target as Node) &&
 					!this.dialogFrame.contains(event.target as Node))
 			)
 				this.closeModal();
@@ -60,7 +60,7 @@ import ContactForm from "./ContactForm.astro";
 
 		openModal = (event?: MouseEvent) => {
 			this.dialog.showModal();
-			document.body.classList.add("overflow-hidden");
+			document.documentElement.classList.add("overflow-hidden");
 			event?.stopPropagation();
 			window.addEventListener("click", this.onWindowClick);
 		};

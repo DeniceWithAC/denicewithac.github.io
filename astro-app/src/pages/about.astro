@@ -1,4 +1,5 @@
 ---
+import ContactForm from "@/components/ContactForm.astro";
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
@@ -15,5 +16,24 @@ const meta = {
 		<div class="absolute top-[-20%] right-[-50%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
 	</div>
 	<section class="mb-10">
+		<h1 class="title mb-6">About</h1>
+		<div class="prose prose-citrus max-w-none">
+			<p>
+				Hi! My name is Denice and I love all things crafty: Crochet, sewing, embroidery etc. 
+				I also love all things seasonal, wether it be cosy pumpkins, summer flowers, or anything
+				Christmas.
+			</p>
+			<p>
+				I live in Oxfordshire with my family and 2 cats and a very lovely Labrador, Albert,
+				and enjoy getting out into the countryside. I take a lot of inspiration from the natural 
+				world, from pinecones, to trees and flowers.
+			</p>
+			<p>
+				I always love a challenge and learning new things, so antything I don't have but you may be 
+				looking for, do feel free to reach out!
+			</p>
+		</div>
+	</section>
 
+	<ContactForm />
 </PageLayout>

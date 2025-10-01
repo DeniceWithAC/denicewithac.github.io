@@ -1,0 +1,84 @@
+---
+import { web3FormsApiKey } from "@/site.config";
+---
+{ web3FormsApiKey && (
+    <>
+        <form method="POST" id="form" class="inline-grid w-full rounded-lg bg-color-75 px-4 md:px-8 py-2 md:py-4">
+            <h2 class="title mb-4">Get in touch</h1>
+            <input type="hidden" name="access_key" value={web3FormsApiKey}>
+
+            <div class="mb-4 w-50">
+                <label for="name" class="block text-sm font-medium text-lighter">Your name</label>
+                <input type="text" name="name" required class="mt-1 block sm:w-80 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <div class="mb-4 w-50">
+                <label for="email" class="block text-sm font-medium text-lighter">Your email</label>
+                <input type="email" name="email" required class="mt-1 block sm:w-80 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <div class="mb-4">
+                <label for="message" class="block text-sm font-medium text-lighter">Message</label>
+                <textarea name="message" required rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+            </div>
+            
+            <div>
+                <button type="submit" class="relative flex items-center justify-center h-10 px-6 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
+                    <span class="text-bgColor font-semibold">
+                        Email me!
+                    </span>
+                </button>
+                <div id="result" class="mt-4 p-3 text-center text-sm font-medium rounded-md"></div>
+            </div>
+        </form>
+
+        <script is:inline>
+            const form = document.getElementById('form');
+            const result = document.getElementById('result');
+
+            form.addEventListener('submit', function(e) {
+                const formData = new FormData(form);
+                e.preventDefault();
+
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                result.innerHTML = "Please wait...";
+                result.className = "mt-4 p-3 text-center text-sm font-medium rounded-md bg-gray-100 text-gray-700"; // Reset classes
+
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status === 200) {
+                            result.innerHTML = json.message;
+                            result.className = "mt-4 p-3 text-center text-sm font-medium rounded-md bg-green-100 text-green-700"; // Success classes
+                        } else {
+                            console.error(response);
+                            result.innerHTML = json.message;
+                            result.className = "mt-4 p-3 text-center text-sm font-medium rounded-md bg-red-100 text-red-700"; // Error classes
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        result.innerHTML = "Something went wrong!";
+                        result.className = "mt-4 p-3 text-center text-sm font-medium rounded-md bg-red-100 text-red-700"; // Error classes
+                    })
+                    .finally(() => {
+                        form.reset();
+                        setTimeout(() => {
+                            result.innerHTML = ""; // Clear the message instead of hiding the div
+                            result.className = "mt-4 p-3 text-center text-sm font-medium rounded-md"; // Clear classes
+                        }, 3000);
+                    });
+            });
+        </script>
+
+    </>
+)}

@@ -41,3 +41,5 @@ export const menuLinks: { path: string; title: string }[] = [
 	// 	title: "Notes",
 	// },
 ];
+
+export const web3FormsApiKey = "a738eee4-fa8d-47fe-b624-73f2e9ee0423";

@@ -1,5 +1,7 @@
 ---
 import { menuLinks, siteConfig } from "@/site.config";
+import { socialLinks } from "@/site.config";
+import { Icon } from "astro-icon/components";
 
 const year = new Date().getFullYear();
 ---
@@ -7,14 +9,31 @@ const year = new Date().getFullYear();
 <footer
 	class="semibold mt-auto flex flex-stretch w-full flex-col items-center justify-center gap-y-2 pb-4 pt-8 text-center align-top text-accent sm:flex-row sm:justify-between sm:text-sm"
 >
-	<div class="me-0 font-semibold sm:me-4">
+	<div class="me-0 font-semibold sm:me-4 md:w-40">
 		&copy; {siteConfig.author}
 		{year} 
 	</div>
 	<nav
 		aria-label="More on this site"
-		class="flex content-end space-x-4 font-medium text-light w-auto"
-	>
+		class="flex content-end space-x-4 font-medium text-light w-auto">
+	{
+		 socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
+			<a
+				title={friendlyName}
+				class="inline-block hover:text-link drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.175)]"
+				href={link}
+				rel={`noreferrer ${isWebmention ? "me authn" : ""}`}
+				target="_blank"
+			>
+				<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />
+				<span class="sr-only">{friendlyName}</span>
+			</a>
+		))
+	}
+	</nav>
+	<nav
+		aria-label="More on this site"
+		class="flex content-end space-x-4 font-medium text-light md:w-40">
 		{
 			menuLinks.map((link) => (
 				<a class="underline-offset-2 hover:text-accent hover:underline" href={link.path}>

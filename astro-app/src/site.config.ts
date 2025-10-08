@@ -42,6 +42,29 @@ export const menuLinks: { path: string; title: string }[] = [
 	// },
 ];
 
+export const socialLinks: {
+	friendlyName: string;
+	isWebmention?: boolean;
+	link: string;
+	name: string;
+}[] = [
+	{
+		friendlyName: "Facebook",
+		link: "https://www.facebook.com/denice.with.a.c",
+		name: "mdi:facebook",
+	},
+	{
+		friendlyName: "Instagram",
+		link: "https://www.instagram.com/denice.with.a.c/",
+		name: "mdi:instagram",
+	},
+	{
+		friendlyName: "Etsy",
+		link: "https://www.etsy.com/uk/shop/DenicewithaC",
+		name: "mdi:etsy",
+	}
+];
+
 export const web3FormsApiKey = "a738eee4-fa8d-47fe-b624-73f2e9ee0423";
 
 export const ga4MeasurementId = "G-J826RQZ50D";

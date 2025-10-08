@@ -1,33 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import { socialLinks } from "@/site.config";
 
 /** 
 	Uses https://www.astroicon.dev/getting-started/
 	Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
 	Only installed pack is: @iconify-json/mdi
 */
-const socialLinks: {
-	friendlyName: string;
-	isWebmention?: boolean;
-	link: string;
-	name: string;
-}[] = [
-	{
-		friendlyName: "Facebook",
-		link: "https://www.facebook.com/denice.with.a.c",
-		name: "mdi:facebook",
-	},
-	{
-		friendlyName: "Instagram",
-		link: "https://www.instagram.com/denice.with.a.c/",
-		name: "mdi:instagram",
-	},
-	{
-		friendlyName: "Etsy",
-		link: "https://www.etsy.com/uk/shop/DenicewithaC",
-		name: "mdi:etsy",
-	}
-];
+
 ---
 
 <div class="flex flex-wrap items-end gap-x-2">
@@ -37,6 +17,7 @@ const socialLinks: {
 			socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
 				<li class="flex">
 					<a
+						title={friendlyName}
 						class="inline-block hover:text-link drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.175)]"
 						href={link}
 						rel={`noreferrer ${isWebmention ? "me authn" : ""}`}

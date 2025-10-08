@@ -76,14 +76,6 @@ import { Icon } from "astro-icon/components";
 				this.closeModal();
 		};
 
-		onWindowKeydown = (e: KeyboardEvent) => {
-			// Check if it's the / key
-			if (e.key === "/" && !this.dialog.open) {
-				this.openModal();
-				e.preventDefault();
-			}
-		};
-
 		openModal = (event?: MouseEvent) => {
 			this.dialog.showModal();
 			document.documentElement.classList.add("overflow-hidden");

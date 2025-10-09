@@ -32,6 +32,10 @@ export const menuLinks: { path: string; title: string }[] = [
 		path: "/about/",
 		title: "About",
 	},
+	{
+		path: "/shop/",
+		title: "Shop",
+	},
 	// {
 	// 	path: "/posts/",
 	// 	title: "Blog",
@@ -66,5 +70,5 @@ export const socialLinks: {
 ];
 
 export const web3FormsApiKey = "a738eee4-fa8d-47fe-b624-73f2e9ee0423";
-
 export const ga4MeasurementId = "G-J826RQZ50D";
+export const etsyStoreName = "DenicewithaC";

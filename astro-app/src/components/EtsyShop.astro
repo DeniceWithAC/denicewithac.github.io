@@ -4,6 +4,32 @@ import { etsyStoreName } from "@/site.config";
 
 <script is:inline define:vars={{ etsyStoreName }}>
   const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
+  
+  function formatPrice(priceString) {
+    if (!priceString) return 'No price';
+
+    const parts = priceString.split(' ');
+    if (parts.length === 2) {
+      const amount = parseFloat(parts[0]);
+      const currencyCode = parts[1].toUpperCase();
+
+      if (isNaN(amount)) return priceString;
+
+      switch (currencyCode) {
+        case 'GBP':
+          return `£${amount.toFixed(2)}`;
+        case 'USD':
+          return `$${amount.toFixed(2)}`;
+        case 'EUR':
+          return `€${amount.toFixed(2)}`;
+        // Add more currency conversions as needed
+        default:
+          return priceString;
+      }
+    }
+    return priceString; // Return original if format is unexpected
+  }
+  
   const parser = new DOMParser();
   fetch('https://corsproxy.io/?' + encodeURIComponent(etsyFeedUrl))
     .then(res => res.text())
@@ -31,7 +57,7 @@ import { etsyStoreName } from "@/site.config";
             }
             const priceElement = tempDoc.querySelector(".price");
             if (priceElement) {
-              price = priceElement.innerHTML || '';
+              price = formatPrice(priceElement.innerHTML) || '';
             }
             const descriptionElement = tempDoc.querySelector(".description");
             if (descriptionElement) {
@@ -84,7 +110,7 @@ import { etsyStoreName } from "@/site.config";
   <div class="etsy-item rounded-lg bg-color-75 p-4">
     <img async class="item-image w-full h-auto mb-4" />
     <h2 class="item-title mb-4 text-xl text-accent-two"></h2>
-    <p class="item-price mb-4"></p>
+    <p class="item-price mb-4 font-semibold"></p>
     <p class="item-description mb-4"></p>
     <a class="item-link relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two" data-astro-source-file="/app/src/pages/index.astro" data-astro-source-loc="54:188">
       <span class="text-bgColor font-semibold">

@@ -1,9 +1,17 @@
-media: astro-app/public/images
+
 content: 
   - name: posts
     label: Blog Posts
     path: astro-app/src/content/post
     type: collection
+    view: 
+      fields: [ title, description, draft, publishDate ]
+      primary: title
+      sort: [date, title]
+      default: 
+        search: ''
+        sort: publishDate
+        order: desc
     fields:
       - name: title
         label: Title
@@ -41,3 +49,4 @@ content:
       - name: body
         label: Body
         type: rich-text
+media: astro-app/public/images

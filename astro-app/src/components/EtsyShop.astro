@@ -16,19 +16,43 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
           const title = item.querySelector("title")?.textContent;
           const link = item.querySelector("link")?.textContent;
           const description = item.querySelector("description")?.textContent;
-
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "rounded-lg bg-color-75 p-4";
-          itemDiv.innerHTML = `
-            <h2 class="text-lg font-semibold">${title || 'No Title'}</h2>
-            <p class="text-gray-600">${description || 'No Description'}</p>
-            ${link ? `<a href="${link}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">View Product</a>` : ''}
-          `;
-          storeContent.appendChild(itemDiv);
+          
+          const template = document.getElementById("etsy-item-template");
+          
+          if (template instanceof HTMLTemplateElement) {
+            const clone = document.importNode(template.content, true);
+            const itemDiv = clone.querySelector(".etsy-item");
+            if (itemDiv) {
+              const itemTitle = itemDiv.querySelector(".item-title");
+              if (itemTitle) {
+                itemTitle.innerHTML = title || 'No Title';
+              }
+              const itemDescription = itemDiv.querySelector(".item-description");
+              if (itemDescription) {
+                itemDescription.innerHTML = description || 'No Description';
+              }
+              const linkElement = itemDiv.querySelector(".item-link");
+              if (linkElement instanceof HTMLAnchorElement && link) {
+                linkElement.href = link;
+                linkElement.style.display = 'block'; // Make link visible if present
+              } else if (linkElement) {
+                linkElement.style.display = 'none'; // Hide link if not present
+              }
+              storeContent.appendChild(itemDiv);
+            }
+          }
         });
       }
     })
     .catch(error => console.error("Error fetching or parsing RSS feed:", error));
 </script>
 
-<div id="store-content" class="grid grid-cols-1 gap-4 md:grid-cols-2"></div>
+<div id="store-content" class="mt-8 mb-8 grid grid-cols-1 gap-4 md:grid-cols-2"></div>
+
+<template id="etsy-item-template">
+  <div class="etsy-item rounded-lg bg-color-75 p-4">
+    <h2 class="item-title mb-6 text-xl text-accent-two"></h2>
+    <p class="item-description text-gray-600"></p>
+    <a class="item-link text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">View Product</a>
+  </div>
+</template>

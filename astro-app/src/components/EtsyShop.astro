@@ -14,11 +14,30 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
       if (storeContent) {
         items.forEach(item => {
           const title = item.querySelector("title")?.textContent;
+          const rawDescription = item.querySelector("description")?.textContent;
           const link = item.querySelector("link")?.textContent;
-          const description = item.querySelector("description")?.textContent;
-          
+
+          let imageUrl = '';
+          let price = '';
+          let cleanDescription = '';
+
+          if (rawDescription) {
+            const tempDoc = parser.parseFromString(rawDescription, "text/html");
+            const imgElement = tempDoc.querySelector("img");
+            if (imgElement) {
+              imageUrl = imgElement.src;
+            }
+            const priceElement = tempDoc.querySelector(".price");
+            if (priceElement) {
+              price = priceElement.innerHTML || '';
+            }
+            const descriptionElement = tempDoc.querySelector(".description");
+            if (descriptionElement) {
+              cleanDescription = descriptionElement.innerHTML || '';
+            }
+          }
+
           const template = document.getElementById("etsy-item-template");
-          
           if (template instanceof HTMLTemplateElement) {
             const clone = document.importNode(template.content, true);
             const itemDiv = clone.querySelector(".etsy-item");
@@ -27,16 +46,27 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
               if (itemTitle) {
                 itemTitle.innerHTML = title || 'No Title';
               }
+              const itemImage = itemDiv.querySelector(".item-image");
+              if (itemImage instanceof HTMLImageElement && imageUrl) {
+                itemImage.src = imageUrl;
+                itemImage.style.display = 'block';
+              } else if (itemImage) {
+                itemImage.style.display = 'none';
+              }
+              const itemPrice = itemDiv.querySelector(".item-price");
+              if (itemPrice) {
+                itemPrice.innerHTML = price || 'No price';
+              }
               const itemDescription = itemDiv.querySelector(".item-description");
               if (itemDescription) {
-                itemDescription.innerHTML = description || 'No Description';
+                itemDescription.innerHTML = cleanDescription || 'No Description';
               }
               const linkElement = itemDiv.querySelector(".item-link");
               if (linkElement instanceof HTMLAnchorElement && link) {
                 linkElement.href = link;
-                linkElement.style.display = 'block'; // Make link visible if present
+                linkElement.style.display = 'block';
               } else if (linkElement) {
-                linkElement.style.display = 'none'; // Hide link if not present
+                linkElement.style.display = 'none';
               }
               storeContent.appendChild(itemDiv);
             }
@@ -51,7 +81,9 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
 
 <template id="etsy-item-template">
   <div class="etsy-item rounded-lg bg-color-75 p-4">
+    <img async class="item-image w-full h-auto mb-4" />
     <h2 class="item-title mb-6 text-xl text-accent-two"></h2>
+    <p class="item-price text-gray-600"></p>
     <p class="item-description text-gray-600"></p>
     <a class="item-link text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">View Product</a>
   </div>

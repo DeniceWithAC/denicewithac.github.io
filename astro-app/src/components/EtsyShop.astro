@@ -111,7 +111,10 @@ import { etsyStoreName } from "@/site.config";
     <img async class="item-image w-full h-auto mb-4" />
     <h2 class="item-title mb-4 text-xl text-accent-two"></h2>
     <p class="item-price mb-4 font-semibold"></p>
-    <p class="item-description mb-4"></p>
+    <details class="mb-4">
+      <summary class="cursor-pointer text-accent-two hover:underline">About</summary>
+      <p class="item-description mt-2"></p>
+    </details>
     <a class="item-link relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two"
        target="_blank">
       <span class="text-bgColor font-semibold">

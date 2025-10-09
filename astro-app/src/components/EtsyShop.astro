@@ -1,9 +1,9 @@
 ---
 import { etsyStoreName } from "@/site.config";
-const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
 ---
 
-<script is:inline define:vars={{ etsyFeedUrl }}>
+<script is:inline define:vars={{ etsyStoreName }}>
+  const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
   const parser = new DOMParser();
   fetch('https://corsproxy.io/?' + encodeURIComponent(etsyFeedUrl))
     .then(res => res.text())
@@ -13,7 +13,9 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
       const storeContent = document.getElementById("store-content");
       if (storeContent) {
         items.forEach(item => {
-          const title = item.querySelector("title")?.textContent;
+          const rawTitle = item.querySelector("title")?.textContent
+          const storeNameIndex = rawTitle.indexOf(' by ' + etsyStoreName);
+          const title = item.querySelector("title")?.textContent.substring(0, storeNameIndex);
           const rawDescription = item.querySelector("description")?.textContent;
           const link = item.querySelector("link")?.textContent;
 
@@ -51,7 +53,7 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
                 itemImage.src = imageUrl;
                 itemImage.style.display = 'block';
               } else if (itemImage) {
-                itemImage.style.display = 'none';
+                itemImage.attributes.disabled = 'disabled';
               }
               const itemPrice = itemDiv.querySelector(".item-price");
               if (itemPrice) {
@@ -64,7 +66,6 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
               const linkElement = itemDiv.querySelector(".item-link");
               if (linkElement instanceof HTMLAnchorElement && link) {
                 linkElement.href = link;
-                linkElement.style.display = 'block';
               } else if (linkElement) {
                 linkElement.style.display = 'none';
               }
@@ -82,9 +83,13 @@ const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
 <template id="etsy-item-template">
   <div class="etsy-item rounded-lg bg-color-75 p-4">
     <img async class="item-image w-full h-auto mb-4" />
-    <h2 class="item-title mb-6 text-xl text-accent-two"></h2>
-    <p class="item-price text-gray-600"></p>
-    <p class="item-description text-gray-600"></p>
-    <a class="item-link text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">View Product</a>
+    <h2 class="item-title mb-4 text-xl text-accent-two"></h2>
+    <p class="item-price mb-4"></p>
+    <p class="item-description mb-4"></p>
+    <a class="item-link relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two" data-astro-source-file="/app/src/pages/index.astro" data-astro-source-loc="54:188">
+      <span class="text-bgColor font-semibold">
+        More info
+      </span>
+    </a>
   </div>
 </template>

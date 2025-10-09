@@ -1,0 +1,34 @@
+---
+import { etsyStoreName } from "@/site.config";
+const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
+---
+
+<script is:inline define:vars={{ etsyFeedUrl }}>
+  const parser = new DOMParser();
+  fetch('https://corsproxy.io/?' + encodeURIComponent(etsyFeedUrl))
+    .then(res => res.text())
+    .then(str => {
+      const xml = parser.parseFromString(str, "application/xml");
+      const items = xml.querySelectorAll("item");
+      const storeContent = document.getElementById("store-content");
+      if (storeContent) {
+        items.forEach(item => {
+          const title = item.querySelector("title")?.textContent;
+          const link = item.querySelector("link")?.textContent;
+          const description = item.querySelector("description")?.textContent;
+
+          const itemDiv = document.createElement("div");
+          itemDiv.className = "rounded-lg bg-color-75 p-4";
+          itemDiv.innerHTML = `
+            <h2 class="text-lg font-semibold">${title || 'No Title'}</h2>
+            <p class="text-gray-600">${description || 'No Description'}</p>
+            ${link ? `<a href="${link}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">View Product</a>` : ''}
+          `;
+          storeContent.appendChild(itemDiv);
+        });
+      }
+    })
+    .catch(error => console.error("Error fetching or parsing RSS feed:", error));
+</script>
+
+<div id="store-content" class="grid grid-cols-1 gap-4 md:grid-cols-2"></div>

@@ -2,7 +2,9 @@
 import { etsyStoreName } from "@/site.config";
 ---
 
-<script is:inline define:vars={{ etsyStoreName }}>
+<script is:inline define:vars={{ defaultEtsyStoreName: etsyStoreName }}>
+  const urlParams = new URLSearchParams(window.location.search);
+  const etsyStoreName = urlParams.get('etsyStoreName') || defaultEtsyStoreName;
   const etsyFeedUrl = `https://www.etsy.com/shop/${etsyStoreName}/rss`;
   
   function formatPrice(priceString) {

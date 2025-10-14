@@ -2,7 +2,7 @@
 title: Embracing Nature
 description: A gentle celebration of autumn’s colours, woodland treasures, and
   joyful moments shared with loved ones as the season shifts.
-updatedDate: 2025-10-14
+publishDate: 2025-10-14
 tags:
   - National Trust
   - Autumn

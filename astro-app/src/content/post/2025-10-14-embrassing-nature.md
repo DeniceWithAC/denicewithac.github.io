@@ -11,10 +11,7 @@ tags:
   - Adventures
 coverImage:
   alt: Floral border at Grey's Court
-  src: /astro-app/public/images/Blog photos/20251012 - National
-    Trust/20251012_151746-min.jpg
-ogImage: /astro-app/public/images/Blog photos/20251012 - National
-  Trust/20251012_151746-min.jpg
+  src: src/assets/images/20251012_151746-min.jpg
 draft: false
 ---
 When life is busy it is so important to find things that you enjoy and that bring you joy. For me that could be may different things, a cosy blanket and cuddles with the dog, Tea and crochet or enjoying the best that autumn had to offer like fresh apple pie and custard. But after a long week it is so important to get out and about while the weather is still amenable and enjoy the last warm of the autumn sunshine before winter settles in.

@@ -34,9 +34,16 @@ content:
           default: [news]
       - name: coverImage
         label: Cover Image
-        type: image
-        options:
-          extensions: [jpg, png]
+        type: object
+        fields:
+        - name: alt
+          label: Alt Text
+          type: text
+        - name: src
+          label: Image File
+          type: image
+          options:
+            extensions: [jpg, png]
       - name: ogImage
         label: Social Media Share image
         type: image

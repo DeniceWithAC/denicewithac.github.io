@@ -58,5 +58,5 @@ content:
         type: rich-text
 media:
       input: astro-app/public/images
-      output: src/assets/images
+      output: astro-app/src/assets/images
 

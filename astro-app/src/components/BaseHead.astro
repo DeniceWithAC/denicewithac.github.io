@@ -97,7 +97,7 @@ const gaScript = ga4MeasurementId ? `
 
 {/* Analytics */}
 { 
-	gaScript && <script set:html={gaScript} /> 
+	gaScript && <Fragment set:html={gaScript} /> 
 }
 
 

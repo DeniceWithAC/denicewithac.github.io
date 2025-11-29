@@ -7,7 +7,7 @@ tags:
   - Craft fayre
 coverImage:
   alt: Craft fayre stall, containing a variety of croched and textile items for sale
-  src: ../../astro-app/public/images/craft_fayre_stall.png
+  src: ../../assets/blog/craft_fayre_stall.png
 draft: false
 ---
 Christmas has always been the busiest, yet my absolute favourite time of year. Call me mad, but this year I've signed up for a total of 5 different Oxfordshire craft fayres in only 4 weeks.. Which is not easy when you have to hand-make all the stock you see before you!

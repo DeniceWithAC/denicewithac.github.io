@@ -1,5 +1,6 @@
 ---
 title: Christmas Craft Fayres
+description: Christmas craft fayres 2025 are underway in Oxfordshire!
 publishDate: 2025-11-16
 tags:
   - Christmas

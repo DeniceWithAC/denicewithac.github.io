@@ -1,7 +1,6 @@
 ---
 title: Christmas Craft Fayres
 publishDate: 2025-11-16
-updatedDate: 2025-11-29
 tags:
   - Christmas
   - Craft fayre
